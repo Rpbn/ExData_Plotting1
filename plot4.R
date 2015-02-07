@@ -1,4 +1,4 @@
-setwd("D:/R_Space/ExploratoryAssign1")
+# Read the Datafile (raw data)
 alldata <- read.table("household_power_consumption.txt", sep = ";", header = 1, na.strings = "?")
 
 ## Changing the date column
@@ -8,6 +8,7 @@ alldata$Time <- strptime(paste(alldata$Date, alldata$Time), "%d/%m/%Y %H:%M:%S")
 twodayfile4 <- alldata[alldata$Date == "1/2/2007" | alldata$Date == "2/2/2007",c("Time","Global_active_power","Sub_metering_1","Sub_metering_2","Sub_metering_3","Voltage","Global_reactive_power")]
 
 png(filename = "plot4.png", width = 480, height = 480, units = "px")
+# Select a frame with 4 positions.
 par(mfrow = c(2,2))
 # Graph 2
     plot(twodayfile4$Time,twodayfile4$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")

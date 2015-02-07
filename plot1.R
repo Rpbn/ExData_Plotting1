@@ -1,4 +1,4 @@
-setwd("D:/R_Space/ExploratoryAssign1")
+# Read the Datafile (raw data)
 alldata <- read.table("household_power_consumption.txt", sep = ";", header = 1, na.strings = "?")
 
 ## Changing the date column
@@ -9,7 +9,7 @@ twodayfile <- alldata[alldata$Date == "1/2/2007" | alldata$Date == "2/2/2007","G
 
 ## Generate the PNG
 ## PNG file with a width of 480 pixels and a height of 480 pixels
-## Global Active Power X Frequency
+## Global Active Power X Frequency - Histogram
 
 png(filename = "plot1.png", width = 480, height = 480)
     hist(twodayfile, xlab = "Global Active Power (Kilowatts)", col = "red", main = "Global Active Power")

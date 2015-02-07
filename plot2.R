@@ -1,4 +1,4 @@
-setwd("D:/R_Space/ExploratoryAssign1")
+# Read the Datafile (raw data)
 alldata <- read.table("household_power_consumption.txt", sep = ";", header = 1, na.strings = "?")
 
 ## Changing the date column
@@ -9,7 +9,7 @@ twodayfile2 <- alldata[alldata$Date == "1/2/2007" | alldata$Date == "2/2/2007",c
 
 ## Generate the PNG
 ## PNG file with a width of 480 pixels and a height of 480 pixels
-## Global Active Power X Frequency
+## Global Active Power X Time - Line Plot
 
 png(filename = "plot2.png", width = 480, height = 480, units = "px")
     plot(twodayfile2$Time,twodayfile2$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
